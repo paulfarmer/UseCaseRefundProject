@@ -1,38 +1,32 @@
 public class FindWarrantyTester {
 
     public static void main(String[] args) {
-        // Set up Rick's guitar inventory
-        WarrantyInventory inventory = new WarrantyInventory();
-        initializeInventory(warrantyinventory);
 
-        Warranty warrantiesFound = new Warranty(123, fdgskfkskfsda, 5421213, "Yes", 45155, "seamus", "1 New Street", 12-5-2016);
+        WarrantyInventory inventory = new WarrantyInventory();
+        initializeInventory(inventory);
+
+        Warranty warrantiesFound = new Warranty(123, "S300", 5421213, "Yes", "seamus", "marion park", 1, 12-5-2016, WarrantyEnum.sixMonths);
 
         Warranty warranty = inventory.search(warrantiesFound);
         if (warranty != null) {
-            System.out.println("Erin, you might like this " +
-                    warranty.getWarrantyOrderID() + " " + warranty.getDescription() +  " " +
-                    warranty.getModelNumber() + " guitar:\n   " +
-                    warranty.getWarrantyValidity() + " back and sides,\n   " +
-                    warranty.getCustomerID() + " top.\nYou can have it for only $" +
-                    warranty.getCustomerName() + "!" + warranty.getCustomerAddress() + " " +
-                    warranty.getDate());
+            System.out.println(", Warranty Search " +
+                    warranty.getWarrantyOrderID() + " " + warranty.getWarrantyOrderID() +  " " +
+                    warranty.getModelNumber() + " Phone:\n   " +
+                    warranty.getWarrantyValidity() + " Warranty Validity,\n   " +
+                    warranty.getCustomerID() + " CustomerID: " +
+                    warranty.getCustomerName() + " " + warranty.getCustomerName() + " " +
+                    warranty.getDate() + warranty.getWarrantyEnum());
         } else {
             System.out.println(".");
         }
     }
 
-    private static void initializeInventory(Inventory inventory) {
-        inventory.addGuitar(234, thearjhj, 5178856, "Yes", 1518785555 ,"paulie",
-                "Rosewood Manor", 12-6-16);
-        inventory.addGuitar(234, theayyhdrjhj, 517856, "Yes", 251878555 ,"mary",
-                "Denny Street", 12-6-16);
-        inventory.addGuitar(345, thearjhvaj, 51786, "Yes", 351878555 ,"brendan",
-                "Marion Park", 12-6-16);
-        inventory.addGuitar(456, thearjhjmk, 517885, "Yes", 451878555 ,"del",
-                "Shanakill", 12-6-16);
-        inventory.addGuitar(567, thearjhjthy, 511378856, "Yes", 551878555 ,"corey",
-                "Glenflesk", 12-6-16);
-        inventory.addGuitar(678, thearjhjewtrt, 517158856, "Yes", 651878555 ,"ronaldo",
-                "Caherslee", 12-6-16);
+    private static void initializeInventory(WarrantyInventory inventory) {
+        inventory.addWarranty(234, "S400", 5178856, "valid", "paulie" ,"glenflesk", 2, 12-6-16);
+        inventory.addWarranty(234, "S500", 517856, "invalid", "mary" ,"shanakill", 3, 12-6-16);
+        inventory.addWarranty(345, "S100", 51786, "invalid", "brendan" ,"boston", 4, 12-6-16);
+        inventory.addWarranty(456, "S200", 517885, "valid", "del" ,"london", 5, 12-6-16);
+        inventory.addWarranty(567, "S700", 511378856, "invalid", "corey" ,"ardfert", 6, 12-6-16);
+        inventory.addWarranty(678, "S800", 517158856, "valid", "ronaldo" ,"lisbon", 7, 12-6-16);
     }
 }
