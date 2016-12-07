@@ -2,10 +2,12 @@
 
 public class Warranty {
 
-    private String description, warrantyValidity, customerName, customerAddress, ;
+    private String description, warrantyValidity, customerName, customerAddress;
     private int warrantyOrderID, modelNumber, customerID, date;
+    private WarrantyEnum warrantyEnum;
 
-    public Warranty(int warrantyOrderID, String description, int modelNumber, String warrantyValidity, String customerName, String customerAddress, int customedID, int date){
+    public Warranty(int warrantyOrderID, String description, int modelNumber, String warrantyValidity,
+                    String customerName, String customerAddress, int customedID, int date, WarrantyEnum warrantyEnum){
 
         this.warrantyOrderID = warrantyOrderID;
         this.description = description;
@@ -15,6 +17,7 @@ public class Warranty {
         this.customerName = customerName;
         this.customerAddress = customerAddress;
         this.date = date;
+        this.warrantyEnum = warrantyEnum;
     }
 
     public int getWarrantyOrderID() {
@@ -47,5 +50,13 @@ public class Warranty {
 
     public int getDate() {
         return date;
+    }
+
+    public WarrantyEnum getWarrantyEnum() {
+        return warrantyEnum;
+    }
+
+    public void setWarrantyEnum(WarrantyEnum warrantyEnum) {
+        this.warrantyEnum = warrantyEnum;
     }
 }

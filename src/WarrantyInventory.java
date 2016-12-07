@@ -1,5 +1,4 @@
 // this inventory stores a list of all the warranties that are available
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,7 +35,7 @@ public class WarrantyInventory {
             Warranty warranty = (Warranty) i.next();
 
             int warrantyOrderID = searchWarranty.getWarrantyOrderID();
-            if ((warrantyOrderID != null) && (!warrantyOrderID.equals()) &&
+            if ((warrantyOrderID != 0) && (!warrantyOrderID.equals()) &&
                     (!warrantyOrderID.equals(warrantyOrderID.getwarrantyOrderID())))
                 continue;
 
@@ -46,7 +45,7 @@ public class WarrantyInventory {
                 continue;
 
             int modelNumber = searchWarranty.getModelNumber();
-            if ((modelNumber != null) && (!modelNumber.equals("")) &&
+            if ((modelNumber != 0) && (!modelNumber.equals("")) &&
                     (!modelNumber.equals(modelNumber.getModelNumber())))
                 continue;
 
@@ -56,7 +55,7 @@ public class WarrantyInventory {
                 continue;
 
             int customerID = searchWarranty.getCustomerID();
-            if ((customerID != null) && (!customerID.equals("")) &&
+            if ((customerID != 0) && (!customerID.equals("")) &&
                     (!customerID.equals(customerID.getCustomerID())))
                 continue;
 
@@ -71,7 +70,7 @@ public class WarrantyInventory {
                 continue;
 
             int date = searchWarranty.getDate();
-            if ((date != null) && (!date.equals("")) &&
+            if ((date != 0) && (!date.equals("")) &&
                     (!date.equals(date.getDate())))
                 continue;
             return warranty;
